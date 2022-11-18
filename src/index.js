@@ -17,6 +17,7 @@ const connet = async()=>{
 }
 const app=express()
 //mildeware
+app.use(express.json())
 initRouter(app)
 
 app.listen(PORT,()=>{
