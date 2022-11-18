@@ -1,7 +1,7 @@
 import express from 'express'
 
 const router=express.Router()
-router.get('/hotle',(req,res)=>{
+router.get('/',(req,res)=>{
     res.send('Hi hotles')
 })
 export default router

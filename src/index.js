@@ -1,10 +1,7 @@
 import express from 'express'
 import dotenv from 'dotenv'
 import mongoose from 'mongoose'
-import routerAuthor from './routes/auth.js'
-import routerHotels from './routes/hotels.js'
-import routerRooms from './routes/rooms.js'
-import routerUsers from './routes/users.js'
+import initRouter from './routes/initRoutes.js'
 dotenv.config()
 const PORT=process.env.PORT
 
@@ -18,13 +15,9 @@ const connet = async()=>{
       throw(error)
   }
 }
-
 const app=express()
 //mildeware
-app.use('/author',routerAuthor)
-app.use('/hotel',routerHotels)
-app.use('/room',routerRooms)
-app.use('/user',routerUsers)
+initRouter(app)
 
 app.listen(PORT,()=>{
     connet()
