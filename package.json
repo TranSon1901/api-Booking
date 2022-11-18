@@ -19,7 +19,8 @@
   },
   "homepage": "https://github.com/TranSon1901/api-Booking#readme",
   "devDependencies": {
-    "express": "^4.18.2"
+    "express": "^4.18.2",
+    "mongoose": "^6.7.2"
   },
   "dependencies": {
     "dotenv": "^16.0.3",
