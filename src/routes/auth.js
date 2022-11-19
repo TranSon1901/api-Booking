@@ -1,6 +1,7 @@
 import express from 'express'
-const router=express.Router()
-router.get('/',(req,res)=>{
-    res.send('author')
-})
+import { register } from '../controllers/author.js'
+
+const router = express.Router()
+router.post('/register', register)
+
 export default router

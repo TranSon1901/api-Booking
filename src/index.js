@@ -1,20 +1,14 @@
 import express from 'express'
 import dotenv from 'dotenv'
-import mongoose from 'mongoose'
 import initRouter from './routes/initRoutes.js'
+import connect from './config/connetDB.js'
 dotenv.config()
 const PORT=process.env.PORT
 
 
 //connet mongoDB
-const connet = async()=>{
-  try{
-    await mongoose.connect(process.env.MONGO_DB)
-    console.log('connet to mongoDB') 
-  }catch(error){
-      throw(error)
-  }
-}
+connect()
+
 const app=express()
 //middleware
 app.use(express.json())
@@ -33,6 +27,5 @@ app.use((err,req,res,next)=>{
 
 //list connet Backend
 app.listen(PORT,()=>{
-    connet()
     console.log(`connet back-end http://localhost:${PORT}`)
 })
