@@ -5,7 +5,7 @@ import { verifyToken } from '../utils/verifyToken.js'
 const router=express.Router()
 
 router.get('/checkauth',verifyToken, (req,res,next)=>{
-
+     res.status(200).json('hello user, you are logged in')
 })
 //GET ALL USER
 router.get('/',getAllUser)

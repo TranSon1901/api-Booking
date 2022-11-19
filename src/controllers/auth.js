@@ -26,12 +26,11 @@ const login = async (req,res,next) =>{
       if(!isPassWordCorret) return next(createError(400,'error password'))
       
       const token = jwt.sign({
-        id:user._id,
-        isAdmin:user.isAdmin},
-        'son')
+        id: user._id,
+        isAdmin: user.isAdmin},process.env.JWT)
       const {password,isAdmin,...otherDetails}= user._doc
       res
-      .cookie('access_token',{ token }, {httpOnly:true})
+      .cookie('access_token',token,{httpOnly:true})
       .status(200)
       .json(otherDetails)
     } catch(err){
