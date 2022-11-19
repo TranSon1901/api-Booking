@@ -1,9 +1,9 @@
-import routerAuthor from './auth.js'
+import routerAuth from './auth.js'
 import routerHotels from './hotels.js'
 import routerRooms from './rooms.js'
 import routerUsers from './users.js'
 const initRouter =(app)=>{
-   app.use('/api/author',routerAuthor)
+   app.use('/api/author',routerAuth)
    app.use('/api/hotels',routerHotels)
    app.use('/api/rooms',routerRooms)
    app.use('/api/users',routerUsers)
