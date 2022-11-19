@@ -2,6 +2,7 @@ import express from 'express'
 import dotenv from 'dotenv'
 import initRouter from './routes/initRoutes.js'
 import connect from './config/connetDB.js'
+import cookieParser from 'cookie-parser'
 dotenv.config()
 const PORT=process.env.PORT
 
@@ -11,6 +12,7 @@ connect()
 
 const app=express()
 //middleware
+app.use(cookieParser())
 app.use(express.json())
 initRouter(app)
 
