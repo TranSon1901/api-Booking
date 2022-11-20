@@ -2,7 +2,7 @@ import Hotel from "../models/Hotel.js"
 import { createError } from '../utils/error.js'
 
 //CREAAT 
-const createHotel = async (req,res) =>{
+const createHotel = async (req,res,next) =>{
     const newHotel= new Hotel(req.body)
    try{
       const saveHotel= await newHotel.save()

@@ -14,7 +14,7 @@ const router=express.Router()
 //     res.status(200).json('hello adim, you can detele all user')
 // })
 //GET ALL USER
-router.get('/',verifyAdmin ,getAllUser)
+router.get('/', verifyAdmin ,getAllUser)
 //GET USER
 router.get('/:id',verifyUser ,getUser)
 //DELETE USER
