@@ -34,17 +34,11 @@ const getALLRoom= async (req,res,next)=>{
     }
 }
 const updateRoom= async (req,res,next)=>{
-    const hotelID= req.params.hotelid
     try{
        const updateRoom= await Room.findByIdAndUpdate(
         req.params.id,
         {$set : req.body},
         {new:true})
-        try{
-
-        }catch(err){
-
-        }
         res.status(200).json(updateRoom)
     }catch(err){
         next(err)
