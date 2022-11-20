@@ -1,4 +1,4 @@
-import mongoose, { Schema } from "mongoose";
+import mongoose from "mongoose";
 
 const RoomSchema= new mongoose.Schema({
     title: {
@@ -14,11 +14,11 @@ const RoomSchema= new mongoose.Schema({
         require:true
     },
     desc: {
-        type:Boolean,
+        type:String,
         require:true
     },
     roomNumbers:[{number:Number,unavailableDates:{type:[Date]}}]
 },
     {timestamps: true}
 )
-export default mongoose.model('rooms',RoomSchema)
+export default mongoose.model('room',RoomSchema)
