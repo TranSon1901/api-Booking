@@ -18,7 +18,7 @@ const createHotel = async (req,res) =>{
 //       .catch(error=>res.status(500).json(error))
 //     }
 //UPDATE
-const updateHotel = async (req,res) =>{
+const updateHotel = async (req,res,next) =>{
     try{ 
         const updateHotel= await Hotel.findByIdAndUpdate(
         req.params.id, 
@@ -30,7 +30,7 @@ const updateHotel = async (req,res) =>{
     }
 }
 //DELETE
-const deleteHotel = async (req,res)=>{
+const deleteHotel = async (req,res,next)=>{
     try{
       await Hotel.findByIdAndDelete(req.params.id)
        res.status(200).json("delete Hotel")
