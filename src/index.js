@@ -3,6 +3,7 @@ import dotenv from 'dotenv'
 import initRouter from './routes/initRoutes.js'
 import connect from './config/connetDB.js'
 import cookieParser from 'cookie-parser'
+import cors from 'cors'
 dotenv.config()
 const PORT=process.env.PORT
 
@@ -14,6 +15,7 @@ const app=express()
 //middleware
 app.use(cookieParser())
 app.use(express.json())
+app.use(cors())
 initRouter(app)
 
 app.use((err,req,res,next)=>{
