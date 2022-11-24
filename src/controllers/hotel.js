@@ -40,8 +40,8 @@ const deleteHotel = async (req,res,next)=>{
 }
 //GETALL
 const getAllHotel =  async (req,res,next)=>{
+    const { min , max , ...others} = req.query
     console.log(req.query)
-    const { min , max , ...others}= req.query
     try{
         const hotels = await Hotel.find({...others,
             cheapestPrice:{ $gt:min | 1, $lt:max || 900 }})
