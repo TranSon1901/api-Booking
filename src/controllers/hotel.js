@@ -89,7 +89,6 @@ const countByType = async (req,res,next)=>{
     }
 }
 const getHotelRoom = async (req,res,next) =>{
-    console.log(req.params.id)
     try{
       const hotel = await Hotel.findById(req.params.id)
       const list = await Promise.all(hotel.rooms.map(room=>{
