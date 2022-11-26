@@ -1,6 +1,6 @@
 import express, { response } from 'express'
 import {createHotel,updateHotel,deleteHotel,
-    getAllHotel,getHotel,countByHotel,countByType} 
+    getAllHotel,getHotel,countByHotel,countByType,getHotelRoom} 
 from '../controllers/hotel.js'
 
 import { verifyAdmin } from '../utils/verifyToken.js'
@@ -17,6 +17,7 @@ router.get('/',getAllHotel)
 router.get('/find/:id', getHotel)
 router.get('/countByCity', countByHotel)
 router.get('/countByType', countByType)
+router.get('/room/:id', getHotelRoom)
 
 export default router
 
